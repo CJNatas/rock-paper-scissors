@@ -1,4 +1,7 @@
-
+.play {
+    color : red;
+    margin: 15px;
+}
 #rock {
     margin:15px;
 }
