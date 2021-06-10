@@ -1,13 +1,16 @@
-.play {
-    color : red;
-    margin: 15px;
-}
-.rock {
+
+#rock {
     margin:15px;
 }
-.paper {
+#paper {
     margin:15px;
 }
-.scissors {
+#scissors {
     margin:15px;
+}
+
+#wrapper {
+    border : 1px solid black;
+    padding: 20px;
+    max-width: 325px;
 }
