@@ -2,12 +2,12 @@
     color : red;
     margin: 15px;
 }
-.rock {
+#rock {
     margin:15px;
 }
-.paper {
+#paper {
     margin:15px;
 }
-.scissors {
+#scissors {
     margin:15px;
 }
