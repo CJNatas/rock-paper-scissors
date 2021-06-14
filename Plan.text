@@ -3,7 +3,6 @@ Planning the solution
 Program RockPaperScissors
 
 Game
-    Start game with three buttons
         Player will decide whether to pick rock, scissors or paper
         series of games will last 5 rounds
 
@@ -12,8 +11,9 @@ computerPlay
     Returns selected value
     Uses that value against the playerselection
 
+
 playerSelection & computerSelection Ruleset
-    If player chooses rock & computer chooses rock
+ If player chooses rock & computer chooses rock
         return draw
     If player chooses paper & computer chooses rock
         return player wins
@@ -33,3 +33,4 @@ playerSelection & computerSelection Ruleset
         return draw
 
 Return all the results properly
+reset game if 5 round condition is not met

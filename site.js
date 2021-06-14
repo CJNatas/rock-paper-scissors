@@ -3,7 +3,7 @@
 
 
 function userInput(){
-    let makeChoice = prompt('what do you choose?');
+    let makeChoice = prompt('5 rounds to the death, what is your weapon, rock, paper, or scissors?');
     if (makeChoice === 'rock'){
         return makeChoice;
     } else if (makeChoice === 'paper'){
@@ -27,7 +27,7 @@ function computerPlay(){
 
 let playerScore = parseInt(0);
 let computerScore = parseInt(0);
-const roundScore = document.querySelector('.round');
+let roundScore = parseInt(0);
     
 function playRound(playerSelection, computerSelection) {
     
@@ -35,31 +35,31 @@ function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase();
         if (playerSelection === computerSelection){
             alert('its a tie!');
-            
+            roundScore++
         }   else if (playerSelection === "rock" && computerSelection === "paper"){
             alert('you lose!');
             computerScore++;
-            
+            roundScore++
         }   else if (playerSelection === "paper" && computerSelection === "scissors"){
             alert('you lose!');
             computerScore++;
-            
+            roundScore++
         }   else if (playerSelection === "scissors" && computerSelection === "rock"){
             alert('you lose!');
             computerScore++;
-            
+            roundScore++
         }   else if (playerSelection === "rock" && computerSelection === "scissors"){
             alert('you win!')
             playerScore++;
-            
+            roundScore++
         }   else if (playerSelection === "paper" && computerSelection === "rock"){
             alert('you win!')
             playerScore++;
-            
+            roundScore++
         }   else if (playerSelection === "scissors" && computerSelection === "paper"){
             alert('you win!')
             playerScore++;
-            
+            roundScore++
         }
 
     
@@ -72,12 +72,16 @@ let play = () => {
     console.log(playRound(playerSelection, computerSelection));
     console.log("Your score = " + playerScore);
     console.log("Computer's score = " + computerScore);
+    console.log("Round : " + roundScore);
     i++;
-    if (i !== 5) {
-        play();
+    if (playerScore === 5){
+        alert('player wins');
+    }   else if (computerScore === 5){
+        alert('computer wins');
     }   else {
-        alert("game over")
-    }   
-}
+        play();
+    }
+}   
+
 
 play();

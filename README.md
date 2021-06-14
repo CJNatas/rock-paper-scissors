@@ -1,5 +1,7 @@
-Started by planning out how the program would look in plan.text
+This javascript plays rock-paper-scissors with the user of a promt.
 
-I then created the computerPick function to allow a randomized choice for the computer.
+Must be played in console to view rounds and score of user and computer though.
 
-Based on that, I still need to add the rules for the choices selected depending on the button.
+Ends after either player or computer wins 5 rounds first.
+
+Allowing the game to repeat if the 5 round condition was not met was done by recursion.
