@@ -1,6 +1,8 @@
 
+
+
+
 function userInput(){
-    let choiceMap = '';
     let makeChoice = prompt('what do you choose?');
     if (makeChoice === 'rock'){
         return makeChoice;
@@ -9,7 +11,8 @@ function userInput(){
     } else if (makeChoice ==='scissors'){
         return makeChoice;
     } else
-        alert('invalid restart game');
+        alert('invalid input try again');
+        play();
     }  
 
 function computerPlay(){
@@ -19,44 +22,62 @@ function computerPlay(){
     return thing;
 }
 
-const playerSelection = userInput();
-const computerSelection = computerPlay();
-const playerScore = 0;
-const computerScore =0;
-
-function displayResults(playerScore, computerScore){
-    if (playerScore === 5){
-        alert('you win!');
-    } else if (computerScore === 5){
-        alert('computer wins!');
-    }
-
-}
 
 
 
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+const roundScore = document.querySelector('.round');
     
-function playRound(playerSelection, computerSelection,playerScore,computerScore) {
+function playRound(playerSelection, computerSelection) {
+    
+    
         playerSelection = playerSelection.toLowerCase();
         if (playerSelection === computerSelection){
             alert('its a tie!');
+            
         }   else if (playerSelection === "rock" && computerSelection === "paper"){
             alert('you lose!');
-            computerScore = computerScore++;
+            computerScore++;
+            
         }   else if (playerSelection === "paper" && computerSelection === "scissors"){
             alert('you lose!');
-            computerScore = computerScore++;
+            computerScore++;
+            
         }   else if (playerSelection === "scissors" && computerSelection === "rock"){
             alert('you lose!');
-            computerScore = computerScore++;
-        }   else {
-            alert('you win!');
-            playerScore = playerScore++;
+            computerScore++;
+            
+        }   else if (playerSelection === "rock" && computerSelection === "scissors"){
+            alert('you win!')
+            playerScore++;
+            
+        }   else if (playerSelection === "paper" && computerSelection === "rock"){
+            alert('you win!')
+            playerScore++;
+            
+        }   else if (playerSelection === "scissors" && computerSelection === "paper"){
+            alert('you win!')
+            playerScore++;
+            
         }
-    return playerScore && computerScore;
-    
 
     
 }
 
-playRound(playerSelection, computerSelection, playerScore, computerScore);
+let i = 0;
+let play = () => {
+    let playerSelection = userInput();
+    let computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("Your score = " + playerScore);
+    console.log("Computer's score = " + computerScore);
+    i++;
+    if (i !== 5) {
+        play();
+    }   else {
+        alert("game over")
+    }   
+}
+
+play();
